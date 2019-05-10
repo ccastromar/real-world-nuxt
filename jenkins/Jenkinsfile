@@ -7,12 +7,31 @@ pipeline {
     }
 	 environment {
         HOME = '.'
+        CI = 'true'
     }
     stages {
+         stage('Checkout') {
+            steps {
+                git branch: 'master', url: 'https://github.com/ccastromar/real-world-nuxt.git'
+            }
+        }
         stage('Build') { 
             steps {
+                
                 sh 'npm install' 
             }
+        }
+        stage('Test') {
+            steps {
+                
+                sh 'npm test'
+               
+            }
+        }
+    }
+    post {
+        always {
+            cleanWs()
         }
     }
 }
