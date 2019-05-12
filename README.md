@@ -20,3 +20,9 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## View app online
+
+The app is deployed on heroku
+
+[Real World Events](https://limitless-headland-27903.herokuapp.com/)
